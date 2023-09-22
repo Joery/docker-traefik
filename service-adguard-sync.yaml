@@ -1,0 +1,16 @@
+services:
+  adguard-sync:
+    container_name: adguard-sync
+    depends_on:
+      - adguard
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: linuxserver/adguardhome-sync:latest
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/adguard-sync:/config

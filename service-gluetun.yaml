@@ -1,0 +1,33 @@
+services:
+  gluetun:
+    cap_add:
+      - NET_ADMIN
+    container_name: gluetun
+    depends_on:
+      - authelia
+      - traefik
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - VPN_SERVICE_PROVIDER=$VPN_PROVIDER
+      - OPENVPN_USER=$VPN_USER
+      - OPENVPN_PASSWORD=$VPN_PASS
+      - SERVER_REGIONS=$VPN_REGION
+    image: qmcgaw/gluetun:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.deluge.rule=Host(`deluge.$DOMAIN`)
+      - traefik.http.services.deluge.loadbalancer.server.port=8112
+    networks:
+      - frontend
+    ports:
+      - 8888:8888
+      - 8388:8388
+      - 8388:8388/udp
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/gluetun:/gluetun

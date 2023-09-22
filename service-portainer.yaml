@@ -1,0 +1,25 @@
+services:
+  portainer:
+    command: -H tcp://socket-proxy:2375
+    container_name: portainer
+    depends_on:
+      - authelia
+      - socket-proxy
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: portainer/portainer-ee:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.portainer.rule=Host(`portainer.$DOMAIN`)
+      - traefik.http.services.portainer.loadbalancer.server.port=9443
+      - traefik.http.services.unifi.loadbalancer.server.scheme=https
+    networks:
+      - backend
+      - frontend
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/portainer:/data

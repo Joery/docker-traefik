@@ -1,0 +1,23 @@
+services:
+  uptime-kuma:
+    container_name: uptime-kuma
+    depends_on:
+      - authelia
+      - socket-proxy
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: louislam/uptime-kuma:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.uptime-kuma.rule=Host(`status.$DOMAIN`)
+      - traefik.http.services.uptime-kuma.loadbalancer.server.port=3001
+    networks:
+      - backend
+      - frontend
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/uptime-kuma:/app/data

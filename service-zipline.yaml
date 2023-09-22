@@ -1,0 +1,40 @@
+services:
+  zipline:
+    cap_add:
+    command:
+    container_name: zipline
+    depends_on:
+      - authelia
+      - postgres
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - CORE_DATABASE_URL=$ZIPLINE_DB
+      - CORE_SECRET=$ZIPLINE_SECRET
+      - FEATURES_ROBOTS_TXT=true
+      - MFA_TOTP_ISSUER=$ZIPLINE_NAME
+      - UPLOADER_ROUTE=/f
+      - UPLOADER_ADMIN_LIMIT=100mb
+      - UPLOADER_USER_LIMIT=100mb
+      - UPLOADER_DEFAULT_EXPIRATION=1w
+      - URLS_ROUTE=/u
+      - WEBSITE_TITLE=$ZIPLINE_NAME
+    expose:
+    extra_hosts:
+    image: ghcr.io/diced/zipline:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.zipline.rule=Host(`share.$DOMAIN`)
+      - traefik.http.services.zipline.loadbalancer.server.port=3000
+    network_mode:
+    networks:
+      - frontend
+    ports:
+    privileged:
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/zipline/public:/zipline/public
+      - $ZIPLINE_DATA:/zipline/uploads

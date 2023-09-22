@@ -1,0 +1,17 @@
+services:
+  mongo:
+    container_name: mongo
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASS
+      - MONGO_INITDB_DATABASE=main
+    image: mongo:6.0
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/mongo:/data

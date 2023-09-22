@@ -1,0 +1,22 @@
+services:
+  asf:
+    container_name: asf
+    depends_on:
+      - authelia
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: justarchi/archisteamfarm:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.asf.rule=Host(`asf.$DOMAIN`)
+      - traefik.http.services.asf.loadbalancer.server.port=1242
+    networks:
+      - frontend
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/asf/config:/app/config
+      - $DOCKER/asf/logs:/app/logs

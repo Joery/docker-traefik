@@ -1,0 +1,24 @@
+services:
+  socket-proxy:
+    container_name: socket-proxy
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - LOG_LEVEL=warning
+      - POST=1
+      - CONTAINERS=1
+      - IMAGES=1
+      - INFO=1
+      - NETWORKS=1
+      - VOLUMES=1
+    image: tecnativa/docker-socket-proxy:latest
+    networks:
+      - backend
+    ports:
+      - 2375:2375
+    privileged: true
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,17 @@
+services:
+  postgres:
+    container_name: postgres
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASS
+      - POSTGRES_DB=main
+    image: postgres:16.0
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/postgres:/var/lib/postgresql/data

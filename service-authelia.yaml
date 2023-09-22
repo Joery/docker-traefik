@@ -1,0 +1,20 @@
+services:
+  authelia:
+    container_name: authelia
+    depends_on:
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: authelia/authelia:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.authelia.rule=Host(`login.$DOMAIN`)
+      - traefik.http.services.authelia.loadbalancer.server.port=9091
+    networks:
+      - frontend
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/authelia:/config

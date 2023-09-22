@@ -1,0 +1,42 @@
+services:
+  bitwarden:
+    container_name: bitwarden
+    depends_on:
+      - authelia
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - DISABLE_2FA_REMEMBER=true
+      - DOMAIN=$BITWARDEN_DOMAIN
+      - DUO_HOST=$DUO_HOST
+      - DUO_IKEY=$DUO_IKEY
+      - DUO_SKEY=$DUO_SKEY
+      - IP_HEADER=X-Forwarded-For
+      - LOG_LEVEL=warn
+      - LOGIN_RATELIMIT_MAX_BURST=10
+      - LOGIN_RATELIMIT_SECONDS=60
+      - PASSWORD_ITERATIONS=350000
+      - PUSH_ENABLED=true
+      - PUSH_INSTALLATION_ID=$BITWARDEN_ID
+      - PUSH_INSTALLATION_KEY=$BITWARDEN_KEY
+      - SHOW_PASSWORD_HINT=false
+      - SIGNUPS_VERIFY=true
+      - SIGNUPS_DOMAINS_WHITELIST=$DOMAIN
+      - SMTP_FROM=$EMAIL_FROM
+      - SMTP_FROM_NAME=Bitwarden
+      - SMTP_HOST=$EMAIL_HOST
+      - SMTP_PORT=$EMAIL_PORT
+      - TRASH_AUTO_DELETE_DAYS=365
+    image: vaultwarden/server:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.bitwarden.rule=Host(`vault.$DOMAIN`)
+      - traefik.http.services.bitwarden.loadbalancer.server.port=80
+    networks:
+      - frontend
+    restart: unless-stopped
+    user: $PUID:$PGID
+    volumes:
+      - $DOCKER/bitwarden:/data
