@@ -1,0 +1,14 @@
+services:
+  cloudflared:
+    command: tunnel run
+    container_name: cloudflared
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - TUNNEL_TOKEN=$TUNNEL_TOKEN
+    image: cloudflare/cloudflared:latest
+    networks:
+      - frontend
+    restart: unless-stopped
+    user: $PUID:$PGID
