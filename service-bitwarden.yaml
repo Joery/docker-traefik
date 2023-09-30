@@ -3,11 +3,13 @@ services:
     container_name: bitwarden
     depends_on:
       - authelia
+      - postgres
       - traefik
     environment:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
+      - DATABASE_URL=$BITWARDEN_DB
       - DISABLE_2FA_REMEMBER=true
       - DOMAIN=$BITWARDEN_DOMAIN
       - DUO_HOST=$DUO_HOST
