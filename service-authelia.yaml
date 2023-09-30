@@ -2,6 +2,7 @@ services:
   authelia:
     container_name: authelia
     depends_on:
+      - postgres
       - traefik
     environment:
       - PUID=$PUID
