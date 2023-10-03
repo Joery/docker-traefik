@@ -14,4 +14,5 @@ services:
     restart: unless-stopped
     user: $PUID:$PGID
     volumes:
-      - $DOCKER/mongo:/data
+      - $DOCKER/mongo/configdb:/data/configdb
+      - $DOCKER/mongo/db:/data/db
