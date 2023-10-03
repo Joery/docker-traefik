@@ -21,6 +21,7 @@ services:
       - traefik.http.services.unifi.loadbalancer.server.port=8443
       - traefik.http.services.unifi.loadbalancer.server.scheme=https
     networks:
+      - backend
       - frontend
     ports:
       - 3478:3478/udp
