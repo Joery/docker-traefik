@@ -17,6 +17,5 @@ services:
     networks:
       - frontend
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/flame:/app/data

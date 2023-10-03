@@ -27,6 +27,5 @@ services:
       - 10001:10001/udp
       - 8080:8080
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/unifi:/config

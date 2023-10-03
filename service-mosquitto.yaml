@@ -9,7 +9,6 @@ services:
     ports:
       - 1884:1884
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/mosquitto/config:/mosquitto/config
       - $DOCKER/mosquitto/data:/mosquitto/data

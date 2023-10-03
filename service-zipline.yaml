@@ -34,7 +34,6 @@ services:
     ports:
     privileged:
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/zipline/public:/zipline/public
       - $ZIPLINE_DATA:/zipline/uploads

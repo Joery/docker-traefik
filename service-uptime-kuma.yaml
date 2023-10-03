@@ -18,6 +18,5 @@ services:
       - backend
       - frontend
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/uptime-kuma:/app/data

@@ -11,7 +11,6 @@ services:
     image: linuxserver/deluge:latest
     network_mode: container:gluetun
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/deluge:/config
       - $DELUGE_DATA:/downloads

@@ -16,7 +16,6 @@ services:
     networks:
       - frontend
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/asf/config:/app/config
       - $DOCKER/asf/logs:/app/logs

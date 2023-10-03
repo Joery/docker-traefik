@@ -19,6 +19,5 @@ services:
       - 2375:2375
     privileged: true
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

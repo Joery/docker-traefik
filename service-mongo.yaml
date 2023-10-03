@@ -12,7 +12,6 @@ services:
     ports:
       - 27017:27017
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/mongo/configdb:/data/configdb
       - $DOCKER/mongo/db:/data/db

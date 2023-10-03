@@ -23,7 +23,6 @@ services:
       - 53:53/udp
 #     - 3000:3000
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/adguard/conf:/opt/adguardhome/conf
       - $DOCKER/adguard/work:/opt/adguardhome/work

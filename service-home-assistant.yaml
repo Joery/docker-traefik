@@ -20,6 +20,5 @@ services:
     network_mode: host
     privileged: true
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/home-assistant:/config

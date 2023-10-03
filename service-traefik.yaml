@@ -20,7 +20,6 @@ services:
     ports:
       - 443:443
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/traefik/certificates:/certificates
       - $DOCKER/traefik/configuration.yml:/configuration.yml

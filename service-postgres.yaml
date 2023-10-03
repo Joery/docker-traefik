@@ -12,6 +12,5 @@ services:
     ports:
       - 5432:5432
     restart: unless-stopped
-    user: $PUID:$PGID
     volumes:
       - $DOCKER/postgres:/var/lib/postgresql/data

@@ -18,4 +18,3 @@ services:
     networks:
       - frontend
     restart: unless-stopped
-    user: $PUID:$PGID
