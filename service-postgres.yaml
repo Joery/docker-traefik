@@ -9,6 +9,8 @@ services:
       - POSTGRES_PASSWORD=$POSTGRES_PASS
       - POSTGRES_DB=main
     image: postgres:16.0
+    networks:
+      - backend
     ports:
       - 5432:5432
     restart: unless-stopped

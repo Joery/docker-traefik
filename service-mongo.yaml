@@ -6,6 +6,8 @@ services:
       - PGID=$PGID
       - TZ=$TZ
     image: mongo:7.0
+    networks:
+      - backend
     ports:
       - 27017:27017
     restart: unless-stopped

@@ -30,6 +30,7 @@ services:
       - traefik.http.services.zipline.loadbalancer.server.port=3000
     network_mode:
     networks:
+      - backend
       - frontend
     ports:
     privileged:
