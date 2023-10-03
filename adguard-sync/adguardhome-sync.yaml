@@ -1,0 +1,30 @@
+cron: "*/10 * * * *"
+runOnStart: true
+
+origin:
+  url: http://x.x.x.x
+  username: xxx
+  password: xxx
+
+replica:
+  url: http://x.x.x.x
+  username: xxx
+  password: xxx
+
+api:
+  port: 8080
+
+features:
+  generalSettings: true
+  queryLogConfig: true
+  statsConfig: true
+  clientSettings: true
+  services: true
+  filters: true
+  dhcp:
+    serverConfig: true
+    staticLeases: true
+  dns:
+    serverConfig: true
+    accessLists: true
+    rewrites: true
