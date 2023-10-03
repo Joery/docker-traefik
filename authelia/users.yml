@@ -1,0 +1,7 @@
+users:
+  xxx:
+    disabled: false
+    displayname: "xxx"
+    password: "xxx"
+    email: xxx@example.com
+    groups: []

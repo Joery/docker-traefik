@@ -1,0 +1,75 @@
+default_2fa_method: mobile_push
+default_redirection_url: https://example.com/
+jwt_secret: xxx
+theme: auto
+
+authentication_backend:
+  file:
+    path: /config/users.yml
+    password:
+      algorithm: argon2
+    search:
+      email: true
+
+duo_api:
+  hostname: xxx
+  integration_key: xxx
+  secret_key: xxx
+
+totp:
+  issuer: example.com
+
+webauthn:
+  disable: true
+
+access_control:
+  default_policy: deny
+  rules:
+  - domain:
+    - xxx.example.com
+    policy: bypass
+  - domain: "*.example.com"
+    networks: x.x.x.x
+    policy: bypass
+  - domain: "*.example.com"
+    policy: two_factor
+
+password_policy:
+  standard:
+    enabled: true
+    min_length: 16
+    require_uppercase: true
+    require_lowercase: true
+    require_number: true
+    require_special: true
+
+session:
+  domain: example.com
+  remember_me_duration: -1
+  secret: xxx
+
+storage:
+  encryption_key: xxx
+  postgres:
+    host: postgres
+    port: 5432
+    database: authelia
+    username: authelia
+    password: xxx
+
+notifier:
+  smtp:
+    host: xxx
+    port: xxx
+    sender: "xxx"
+    subject: "{title}"
+    startup_check_address: xxx
+
+ntp:
+  address: "time.cloudflare.com:123"
+  version: 4
+
+log:
+  file_path: /config/authelia.log
+  keep_stdout: true
+  level: warn
