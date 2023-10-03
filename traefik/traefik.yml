@@ -1,0 +1,22 @@
+api:
+  dashboard: true
+  disabledashboardad: true
+
+entryPoints:
+  https:
+    address: ":443"
+    http:
+      middlewares: default@file
+
+log:
+  filePath: traefik.log
+  format: common
+  level: WARN
+
+providers:
+  docker:
+    endpoint: tcp://socket-proxy:2375
+    exposedByDefault: false
+    network: frontend
+  file:
+    filename: configuration.yml

@@ -1,0 +1,51 @@
+http:
+  middlewares:
+    default:
+      chain:
+        middlewares:
+          - forwardauth
+          - headers
+          - ratelimit
+    forwardauth:
+      forwardAuth:
+        address: "http://authelia:9091/api/verify?rd=https://login.example.com/"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - Remote-User
+          - Remote-Groups
+          - Remote-Name
+          - Remote-Email
+    headers:
+      headers:
+        customResponseHeaders:
+          Server: ""
+          X-Robots-Tag: "none, noarchive, nosnippet, notranslate, noimageindex"
+        accessControlAllowMethods:
+          - GET
+          - OPTIONS
+          - PUT
+        accessControlMaxAge: 100
+        hostsProxyHeaders:
+          - "X-Forwarded-Host"
+        stsSeconds: 63072000
+        stsIncludeSubdomains: true
+        stsPreload: true
+        forceSTSHeader: true
+        customFrameOptionsValue: "SAMEORIGIN"
+        contentTypeNosniff: true
+        browserXssFilter: true
+        referrerPolicy: "same-origin"
+        permissionsPolicy: "autoplay=(), camera=(), display-capture=(), fullscreen=(), geolocation=(), microphone=(), web-share=()"
+    ratelimit:
+      rateLimit:
+        average: 100
+        burst: 50
+
+tls:
+  certificates:
+    - certFile: /certificates/example.com.cert
+      keyFile: /certificates/example.com.key
+  options:
+    default:
+      minVersion: VersionTLS13
+      sniStrict: true
