@@ -36,5 +36,5 @@ services:
     privileged:
     restart: unless-stopped
     volumes:
-      - $DOCKER/zipline/public:/zipline/public
+      - $DOCKER/zipline:/zipline/public
       - $ZIPLINE_DATA:/zipline/uploads
