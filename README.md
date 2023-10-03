@@ -28,3 +28,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `uptime-kuma` monitoring tool
 - `watchtower` updating Docker containers
 - `zipline` file & link sharing
+
+## Networks
+- `frontend` for access to `traefik`
+- `backend` for access to `mongo`, `postgres` & `socket-proxy`
