@@ -2,7 +2,7 @@ cron: "*/10 * * * *"
 runOnStart: true
 
 origin:
-  url: http://x.x.x.x
+  url: http://adguard
   username: xxx
   password: xxx
 

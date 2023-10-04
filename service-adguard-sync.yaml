@@ -8,6 +8,8 @@ services:
       - PGID=$PGID
       - TZ=$TZ
     image: linuxserver/adguardhome-sync:latest
+    networks:
+      - frontend
     ports:
       - 8080:8080
     restart: unless-stopped
