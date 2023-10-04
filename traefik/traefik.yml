@@ -22,3 +22,6 @@ providers:
     network: frontend
   file:
     filename: configuration.yml
+
+serversTransport:
+  insecureSkipVerify: true
