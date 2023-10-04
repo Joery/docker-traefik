@@ -46,6 +46,6 @@ tls:
     - certFile: /certificates/example.com.cert
       keyFile: /certificates/example.com.key
   options:
-    default:
+    secure:
       minVersion: VersionTLS13
       sniStrict: true

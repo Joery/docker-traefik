@@ -7,6 +7,8 @@ entryPoints:
     address: ":443"
     http:
       middlewares: default@file
+      tls:
+        options: secure@file
 
 log:
   filePath: traefik.log
