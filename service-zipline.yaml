@@ -1,7 +1,5 @@
 services:
   zipline:
-    cap_add:
-    command:
     container_name: zipline
     depends_on:
       - authelia
@@ -21,19 +19,14 @@ services:
       - UPLOADER_DEFAULT_EXPIRATION=1w
       - URLS_ROUTE=/u
       - WEBSITE_TITLE=$ZIPLINE_NAME
-    expose:
-    extra_hosts:
     image: ghcr.io/diced/zipline:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.zipline.rule=Host(`share.$DOMAIN`)
       - traefik.http.services.zipline.loadbalancer.server.port=3000
-    network_mode:
     networks:
       - backend
       - frontend
-    ports:
-    privileged:
     restart: unless-stopped
     volumes:
       - $DOCKER/zipline:/zipline/public
