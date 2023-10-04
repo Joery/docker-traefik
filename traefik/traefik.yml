@@ -1,6 +1,5 @@
 api:
   dashboard: true
-  disabledashboardad: true
 
 entryPoints:
   https:
