@@ -6,6 +6,8 @@ services:
       - PGID=$PGID
       - TZ=$TZ
     image: eclipse-mosquitto:latest
+    networks:
+      - frontend
     ports:
       - 1884:1884
     restart: unless-stopped
