@@ -1,14 +1,16 @@
 networks:
   frontend:
+    name: frontend
     ipam:
-    config:
-      - subnet: $FRONTEND_SUBNET
-        gateway: $FRONTEND
+      config:
+        - subnet: $FRONTEND_SUBNET
+          gateway: $FRONTEND
   backend:
+    name: backend
     ipam:
-    config:
-      - subnet: $BACKEND_SUBNET
-        gateway: $BACKEND
+      config:
+        - subnet: $BACKEND_SUBNET
+          gateway: $BACKEND
 
 include:
   - service-adguard.yaml
