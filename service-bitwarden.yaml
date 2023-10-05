@@ -11,7 +11,7 @@ services:
       - TZ=$TZ
       - DATABASE_URL=$BITWARDEN_DB
       - DISABLE_2FA_REMEMBER=true
-      - DOMAIN=$BITWARDEN_DOMAIN
+      - DOMAIN=$DOMAIN
       - DUO_HOST=$DUO_HOST
       - DUO_IKEY=$DUO_IKEY
       - DUO_SKEY=$DUO_SKEY
@@ -34,7 +34,7 @@ services:
     image: vaultwarden/server:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.bitwarden.rule=Host(`vault.$DOMAIN`)
+      - traefik.http.routers.bitwarden.rule=Host(`vault.$WEB`)
       - traefik.http.services.bitwarden.loadbalancer.server.port=80
     networks:
       - backend

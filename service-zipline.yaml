@@ -22,7 +22,7 @@ services:
     image: ghcr.io/diced/zipline:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.zipline.rule=Host(`share.$DOMAIN`)
+      - traefik.http.routers.zipline.rule=Host(`share.$WEB`)
       - traefik.http.services.zipline.loadbalancer.server.port=3000
     networks:
       - backend

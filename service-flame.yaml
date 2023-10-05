@@ -12,7 +12,7 @@ services:
     image: pawelmalak/flame:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.flame.rule=Host(`start.$DOMAIN`)
+      - traefik.http.routers.flame.rule=Host(`start.$WEB`)
       - traefik.http.services.flame.loadbalancer.server.port=5005
     networks:
       - frontend

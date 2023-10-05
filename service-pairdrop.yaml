@@ -13,7 +13,7 @@ services:
     image: linuxserver/pairdrop:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.pairdrop.rule=Host(`file.$DOMAIN`)
+      - traefik.http.routers.pairdrop.rule=Host(`file.$WEB`)
       - traefik.http.services.pairdrop.loadbalancer.server.port=3000
     networks:
       - frontend

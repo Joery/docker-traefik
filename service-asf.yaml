@@ -11,7 +11,7 @@ services:
     image: justarchi/archisteamfarm:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.asf.rule=Host(`asf.$DOMAIN`)
+      - traefik.http.routers.asf.rule=Host(`asf.$WEB`)
       - traefik.http.services.asf.loadbalancer.server.port=1242
     networks:
       - frontend

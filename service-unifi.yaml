@@ -17,7 +17,7 @@ services:
     image: linuxserver/unifi-network-application:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.unifi.rule=Host(`unifi.$DOMAIN`)
+      - traefik.http.routers.unifi.rule=Host(`unifi.$WEB`)
       - traefik.http.services.unifi.loadbalancer.server.port=8443
       - traefik.http.services.unifi.loadbalancer.server.scheme=https
     networks:

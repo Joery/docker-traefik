@@ -11,7 +11,7 @@ services:
     image: authelia/authelia:latest
     labels:
       - traefik.enable=true
-      - traefik.http.routers.authelia.rule=Host(`login.$DOMAIN`)
+      - traefik.http.routers.authelia.rule=Host(`login.$WEB`)
       - traefik.http.services.authelia.loadbalancer.server.port=9091
     networks:
       - backend

@@ -12,7 +12,7 @@ services:
     image: traefik:beaufort # 3.0
     labels:
       - traefik.enable=true
-      - traefik.http.routers.traefik.rule=Host(`traefik.$DOMAIN`)
+      - traefik.http.routers.traefik.rule=Host(`traefik.$WEB`)
       - traefik.http.routers.traefik.service=api@internal
     networks:
       - backend
