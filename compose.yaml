@@ -16,7 +16,6 @@ include:
   - service-asf.yaml
   - service-authelia.yaml
   - service-bitwarden.yaml
-  - service-cloudflared.yaml
   - service-deluge.yaml
   - service-flame.yaml
   - service-freshrss.yaml

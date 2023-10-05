@@ -10,7 +10,6 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `asf` farming Steam cards
 - `authelia` login portal for applications
 - `bitwarden` storing passwords & secrets
-- `cloudflared` applications without port-forwarding
 - `deluge` downloading Linux ISOs
 - `flame` dashboard with bookmarks
 - `freshrss` RSS feeds aggregator
