@@ -10,7 +10,7 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
-    image: portainer/portainer-ee:latest
+    image: portainer/portainer-ce:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.portainer.rule=Host(`portainer.$WEB`)
