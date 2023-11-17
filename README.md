@@ -26,6 +26,9 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `unifi` central management for UniFi
 - `uptime-kuma` monitoring tool
 - `watchtower` updating Docker containers
+- `wyoming-openwakeword` assistant voice activation for `home-assistant`
+- `wyoming-piper` text-to-speech for `home-assistant`
+- `wyoming-whisper` speech-to-text for `home-assistant`
 - `zipline` file & link sharing
 
 ## Networks

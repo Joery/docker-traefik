@@ -1,0 +1,14 @@
+services:
+  wyoming-openwakeword:
+    command: [ "--preload-model", "hey_jarvis" ]
+    container_name: wyoming-openwakeword
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: rhasspy/wyoming-openwakeword:latest
+    networks:
+      - frontend
+    ports:
+      - 10400:10400
+    restart: unless-stopped

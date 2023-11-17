@@ -1,0 +1,16 @@
+services:
+  wyoming-piper:
+    command: [ "--voice", "en_US-ryan-medium" ]
+    container_name: wyoming-piper
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: rhasspy/wyoming-piper:latest
+    networks:
+      - frontend
+    ports:
+      - 10200:10200
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/wyoming-piper:/data

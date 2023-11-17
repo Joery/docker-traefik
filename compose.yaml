@@ -34,4 +34,7 @@ include:
   - service-unifi.yaml
   - service-uptime-kuma.yaml
   - service-watchtower.yaml
+  - service-wyoming-openwakeword.yaml
+  - service-wyoming-piper.yaml
+  - service-wyoming-whisper.yaml
   - service-zipline.yaml

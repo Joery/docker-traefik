@@ -1,0 +1,16 @@
+services:
+  wyoming-whisper:
+    command: [ "--model", "base-int8", "--language", "en" ]
+    container_name: wyoming-whisper
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: rhasspy/wyoming-whisper:latest
+    networks:
+      - frontend
+    ports:
+      - 10300:10300
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/wyoming-whisper:/data
