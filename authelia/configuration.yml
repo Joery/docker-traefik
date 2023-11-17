@@ -58,6 +58,7 @@ storage:
     password: xxx
 
 notifier:
+  disable_startup_check: true
   smtp:
     host: xxx
     port: xxx
