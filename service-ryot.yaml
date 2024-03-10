@@ -1,0 +1,24 @@
+services:
+  ryot:
+    container_name: ryot
+    depends_on:
+      - authelia
+      - postgres
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - DATABASE_URL=$RYOT_DB
+      - USERS_ALLOW_REGISTRATION=false
+    image: ghcr.io/ignisda/ryot:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ryot.rule=Host(`tracker.$WEB`)
+      - traefik.http.services.ryot.loadbalancer.server.port=8000
+    networks:
+      - backend
+      - frontend
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/ryot:/config

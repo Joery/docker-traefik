@@ -19,7 +19,8 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `mosquitto` MQTT message broker
 - `pairdrop` P2P file sharing
 - `portainer` container management
-- `postgres` database for `authelia`, `bitwarden`, `home-assistant` & `zipline`
+- `postgres` database for `authelia`, `bitwarden`, `freshrss`, `home-assistant`, `ryot` & `zipline`
+- `ryot` media tracker
 - `socket-proxy` secure access to Docker socket
 - `tautulli` Plex activity & statistics
 - `traefik` reverse proxy

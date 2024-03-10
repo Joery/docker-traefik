@@ -28,6 +28,7 @@ include:
   - service-pairdrop.yaml
   - service-portainer.yaml
   - service-postgres.yaml
+  - service-ryot.yaml
   - service-socket-proxy.yaml
   - service-tautulli.yaml
   - service-traefik.yaml
