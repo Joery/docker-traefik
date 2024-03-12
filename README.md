@@ -69,3 +69,17 @@ sudo ufw allow in 8123/tcp  # Home Assistant
 sudo ufw enable
 sudo ufw status verbose
 ```
+
+## PostgreSQL
+```
+# Create database
+CREATE DATABASE x;
+
+# Create user
+CREATE USER x WITH ENCRYPTED PASSWORD 'x';
+
+# Grand privileges to user on database
+GRANT all privileges ON database x TO x;
+
+# Repeat steps for other required databases
+```
