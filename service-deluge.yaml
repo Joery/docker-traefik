@@ -8,7 +8,7 @@ services:
       - PGID=$PGID
       - TZ=$TZ
       - DELUGE_LOGLEVEL=warning
-    image: linuxserver/deluge:latest
+    image: ghcr.io/linuxserver/deluge:latest
     network_mode: container:gluetun
     restart: unless-stopped
     volumes:

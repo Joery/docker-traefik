@@ -9,7 +9,7 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
-    image: linuxserver/freshrss:latest
+    image: ghcr.io/linuxserver/freshrss:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.freshrss.rule=Host(`rss.$WEB`)

@@ -7,7 +7,7 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
-    image: linuxserver/adguardhome-sync:latest
+    image: ghcr.io/linuxserver/adguardhome-sync:latest
     networks:
       - frontend
     ports:

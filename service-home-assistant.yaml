@@ -11,7 +11,7 @@ services:
       - TZ=$TZ
     expose:
       - 8123
-    image: linuxserver/homeassistant:latest
+    image: ghcr.io/linuxserver/homeassistant:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.home-assistant.rule=Host(`home.$WEB`)

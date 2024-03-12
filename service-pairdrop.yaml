@@ -10,7 +10,7 @@ services:
       - TZ=$TZ
       - RATE_LIMIT=true
       - WS_FALLBACK=true
-    image: linuxserver/pairdrop:latest
+    image: ghcr.io/linuxserver/pairdrop:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.pairdrop.rule=Host(`file.$WEB`)
