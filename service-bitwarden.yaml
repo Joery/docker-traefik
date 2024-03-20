@@ -31,7 +31,7 @@ services:
       - SMTP_HOST=$EMAIL_HOST
       - SMTP_PORT=$EMAIL_PORT
       - TRASH_AUTO_DELETE_DAYS=365
-    image: vaultwarden/server:latest
+    image: ghcr.io/dani-garcia/vaultwarden:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.bitwarden.rule=Host(`vault.$WEB`)
