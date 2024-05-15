@@ -1,6 +1,6 @@
 default_2fa_method: mobile_push
 default_redirection_url: https://example.com/
-jwt_secret: xxx
+identity_validation.reset_password.jwt_secret: xxx
 theme: auto
 
 authentication_backend:
@@ -45,14 +45,13 @@ password_policy:
 
 session:
   domain: example.com
-  remember_me_duration: -1
+  remember_me: -1
   secret: xxx
 
 storage:
   encryption_key: xxx
   postgres:
-    host: postgres
-    port: 5432
+    address: tcp://postgres:5432
     database: authelia
     username: authelia
     password: xxx
@@ -60,8 +59,7 @@ storage:
 notifier:
   disable_startup_check: true
   smtp:
-    host: xxx
-    port: xxx
+    address: smtp://xxx:25
     sender: "xxx"
     subject: "{title}"
     startup_check_address: xxx
