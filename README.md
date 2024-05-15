@@ -5,6 +5,9 @@ My Docker setup with Traefik, Authelia and a bunch of other applications.
 If you find any issues or have improvements, feel free to create an [issue](https://github.com/Joery/docker-traefik/issues) or [pull request](https://github.com/Joery/docker-traefik/pulls).
 
 ## Applications
+> [!TIP]
+> You are not required to run all applications, you can simply comment out or remove applications from the ```compose.yaml```-file.
+
 - `adguard` blocking ads & tracking
 - `adguard-sync` syncing config of `adguard` with other instances
 - `asf` farming Steam cards
@@ -37,6 +40,8 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `backend` for access to `mongo`, `postgres` & `socket-proxy`
 
 # Installation Instructions
+> [!IMPORTANT]  
+> These installation instructions are incomplete, they will be expanded upon and moved to the wiki in the future.
 
 ## Docker (Ubuntu)
 - [Install Docker Engine & Docker Compose](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
@@ -44,6 +49,9 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `sudo usermod -aG docker $USER`
 
 ## Firewall (ufw)
+> [!CAUTION]
+> Understand the commands you are entering below and make sure they are correct, failing to do so may lock you out of your server.
+
 ```
 # Install UFW
 sudo apt-get install ufw
