@@ -1,5 +1,5 @@
 global:
-  CheckNewVersion: false
+  checkNewVersion: false
 
 api:
   dashboard: true
