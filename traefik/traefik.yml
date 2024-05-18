@@ -1,3 +1,6 @@
+global:
+  CheckNewVersion: false
+
 api:
   dashboard: true
 
