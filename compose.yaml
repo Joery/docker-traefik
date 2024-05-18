@@ -16,7 +16,7 @@ include:
   - service-adguard.yaml
   - service-adguard-sync.yaml
   - service-asf.yaml
-  - service-authelia.yaml
+  - service-authelia.yaml            # Required
   - service-bitwarden.yaml
   - service-deluge.yaml
   - service-flame.yaml
@@ -28,11 +28,11 @@ include:
   - service-netbootxyz.yaml
   - service-pairdrop.yaml
   - service-portainer.yaml
-  - service-postgres.yaml
+  - service-postgres.yaml            # Required
   - service-ryot.yaml
-  - service-socket-proxy.yaml
+  - service-socket-proxy.yaml        # Required
   - service-tautulli.yaml
-  - service-traefik.yaml
+  - service-traefik.yaml             # Required
   - service-unifi.yaml
   - service-uptime-kuma.yaml
   - service-watchtower.yaml
