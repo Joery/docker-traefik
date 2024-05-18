@@ -1,0 +1,17 @@
+services:
+  netbootxyz:
+    container_name: netbootxyz
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: ghcr.io/linuxserver/netbootxyz:latest
+    networks:
+      - frontend
+    ports:
+      - 3000:3000
+      - 69:69/udp
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/netbootxyz:/config
+      - $NETBOOTXYZ_DATA:/assets

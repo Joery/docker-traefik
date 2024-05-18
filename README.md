@@ -20,6 +20,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `home-assistant` home automation
 - `mongo` database for `unifi`
 - `mosquitto` MQTT message broker
+- `netbootxyz` PXE boot ISOs
 - `pairdrop` P2P file sharing
 - `portainer` container management
 - `postgres` database for `authelia`, `bitwarden`, `freshrss`, `home-assistant`, `ryot` & `zipline`

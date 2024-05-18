@@ -25,6 +25,7 @@ include:
   - service-home-assistant.yaml
   - service-mongo.yaml
   - service-mosquitto.yaml
+  - service-netbootxyz.yaml
   - service-pairdrop.yaml
   - service-portainer.yaml
   - service-postgres.yaml
