@@ -20,7 +20,7 @@ services:
       - BLOCK_MALICIOUS=on
       - BLOCK_SURVEILLANCE=on
       - SHADOWSOCKS=on
-    image: qmcgaw/gluetun:latest
+    image: ghcr.io/qdm12/gluetun:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.deluge.rule=Host(`deluge.$WEB`)
