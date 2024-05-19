@@ -1,16 +1,9 @@
-global:
-  checkNewVersion: false
-
 api:
   dashboard: true
 
 entryPoints:
   https:
     address: ":443"
-    http:
-      middlewares: default@file
-      tls:
-        options: secure@file
     forwardedHeaders:
       trustedIPs:
         - "103.21.244.0/22"
@@ -28,6 +21,13 @@ entryPoints:
         - "190.93.240.0/20"
         - "197.234.240.0/22"
         - "198.41.128.0/17"
+    http:
+      middlewares: default@file
+      tls:
+        options: secure@file
+
+global:
+  checkNewVersion: false
 
 log:
   filePath: traefik.log

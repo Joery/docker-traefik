@@ -9,33 +9,33 @@ http:
     forwardauth:
       forwardAuth:
         address: "http://authelia:9091/api/authz/forward-auth"
-        trustForwardHeader: true
         authResponseHeaders:
           - Remote-User
           - Remote-Groups
           - Remote-Name
           - Remote-Email
+        trustForwardHeader: true
     headers:
       headers:
-        customResponseHeaders:
-          Server: ""
-          X-Robots-Tag: "none, noarchive, nosnippet, notranslate, noimageindex"
         accessControlAllowMethods:
           - GET
           - OPTIONS
           - PUT
         accessControlMaxAge: 100
+        browserXssFilter: true
+        contentTypeNosniff: true
+        customFrameOptionsValue: "SAMEORIGIN"
+        customResponseHeaders:
+          Server: ""
+          X-Robots-Tag: "none, noarchive, nosnippet, notranslate, noimageindex"
+        forceSTSHeader: true
         hostsProxyHeaders:
           - "X-Forwarded-Host"
-        stsSeconds: 63072000
+        permissionsPolicy: "autoplay=(), camera=(), display-capture=(), fullscreen=(), geolocation=(), microphone=(), web-share=()"
+        referrerPolicy: "same-origin"
         stsIncludeSubdomains: true
         stsPreload: true
-        forceSTSHeader: true
-        customFrameOptionsValue: "SAMEORIGIN"
-        contentTypeNosniff: true
-        browserXssFilter: true
-        referrerPolicy: "same-origin"
-        permissionsPolicy: "autoplay=(), camera=(), display-capture=(), fullscreen=(), geolocation=(), microphone=(), web-share=()"
+        stsSeconds: 63072000
     ratelimit:
       rateLimit:
         average: 100
