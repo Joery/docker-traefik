@@ -8,7 +8,7 @@ http:
           - ratelimit
     forwardauth:
       forwardAuth:
-        address: "http://authelia:9091/api/verify?rd=https://login.example.com/"
+        address: "http://authelia:9091/api/authz/forward-auth"
         trustForwardHeader: true
         authResponseHeaders:
           - Remote-User
