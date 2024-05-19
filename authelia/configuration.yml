@@ -1,5 +1,4 @@
 default_2fa_method: mobile_push
-default_redirection_url: https://example.com/
 identity_validation.reset_password.jwt_secret: xxx
 theme: auto
 
@@ -44,9 +43,12 @@ password_policy:
     require_special: true
 
 session:
-  domain: example.com
-  remember_me: -1
   secret: xxx
+  cookies:
+    - domain: example.com
+      authelia_url: 'https://login.example.com'
+      default_redirection_url: 'https://start.example.com'
+      remember_me: -1
 
 storage:
   encryption_key: xxx
