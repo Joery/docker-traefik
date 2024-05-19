@@ -16,6 +16,10 @@ services:
       - OPENVPN_USER=$VPN_USER
       - OPENVPN_PASSWORD=$VPN_PASS
       - SERVER_REGIONS=$VPN_REGION
+      - BLOCK_ADS=on
+      - BLOCK_MALICIOUS=on
+      - BLOCK_SURVEILLANCE=on
+      - SHADOWSOCKS=on
     image: qmcgaw/gluetun:latest
     labels:
       - traefik.enable=true
