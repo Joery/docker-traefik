@@ -1,5 +1,4 @@
 default_2fa_method: mobile_push
-identity_validation.reset_password.jwt_secret: xxx
 theme: auto
 
 authentication_backend:
@@ -74,3 +73,7 @@ log:
   file_path: /config/authelia.log
   keep_stdout: true
   level: warn
+
+identity_validation:
+  reset_password:
+    jwt_secret: xxx
