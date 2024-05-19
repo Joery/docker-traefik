@@ -15,4 +15,4 @@ services:
       - 10300:10300
     restart: unless-stopped
     volumes:
-      - $DOCKER/wyoming-whisper:/config
+      - $DATA/wyoming-whisper:/config

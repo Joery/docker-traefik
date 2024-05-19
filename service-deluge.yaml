@@ -13,4 +13,4 @@ services:
     restart: unless-stopped
     volumes:
       - $DOCKER/deluge:/config
-      - $DELUGE_DATA:/downloads
+      - $DATA/deluge:/downloads

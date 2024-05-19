@@ -30,4 +30,4 @@ services:
     restart: unless-stopped
     volumes:
       - $DOCKER/zipline:/zipline/public
-      - $ZIPLINE_DATA:/zipline/uploads
+      - $DATA/zipline:/zipline/uploads

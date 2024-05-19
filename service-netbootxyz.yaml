@@ -14,4 +14,4 @@ services:
     restart: unless-stopped
     volumes:
       - $DOCKER/netbootxyz:/config
-      - $NETBOOTXYZ_DATA:/assets
+      - $DATA/netbootxyz:/assets
