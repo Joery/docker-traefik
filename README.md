@@ -23,6 +23,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `netbootxyz` PXE boot ISOs
 - `pairdrop` P2P file sharing
 - `portainer` container management
+- `portainer-agent` container management agent
 - `postgres` database for `authelia`, `bitwarden`, `freshrss`, `home-assistant`, `ryot` & `zipline`
 - `ryot` media tracker
 - `socket-proxy` secure access to Docker socket
@@ -73,6 +74,7 @@ sudo ufw allow in 443/tcp   # Traefik
 sudo ufw allow in 1884/tcp  # MQTT
 sudo ufw allow in 8080/tcp  # UniFi
 sudo ufw allow in 8123/tcp  # Home Assistant
+sudo ufw allow in 9001/tcp  # Portainer Agent
 
 # Enable UFW & check rules
 sudo ufw enable

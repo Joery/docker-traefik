@@ -28,6 +28,7 @@ include:
   - service-netbootxyz.yaml
   - service-pairdrop.yaml
   - service-portainer.yaml
+  - service-portainer-agent.yaml
   - service-postgres.yaml            # Required
   - service-ryot.yaml
   - service-socket-proxy.yaml        # Required
