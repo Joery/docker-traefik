@@ -8,7 +8,7 @@ services:
       - POSTGRES_USER=$POSTGRES_USER
       - POSTGRES_PASSWORD=$POSTGRES_PASS
       - POSTGRES_DB=main
-    image: postgres:16.0
+    image: postgres:16
     networks:
       - backend
     ports:
