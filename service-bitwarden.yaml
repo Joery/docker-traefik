@@ -9,7 +9,7 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
-#     - DATABASE_URL=$BITWARDEN_DB
+      - DATABASE_URL=$BITWARDEN_DB
       - DISABLE_2FA_REMEMBER=true
       - DOMAIN=$DOMAIN
       - DUO_HOST=$DUO_HOST
