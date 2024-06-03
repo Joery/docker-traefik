@@ -1,6 +1,18 @@
 api:
   dashboard: true
 
+certificatesResolvers:
+  cloudflare:
+    acme:
+      email: noreply@example.com
+      storage: acme.json
+      dnsChallenge:
+        provider: cloudflare
+        delayBeforeCheck: 60s
+        resolvers:
+          - "1.1.1.1:53"
+          - "1.0.0.1:53"
+
 entryPoints:
   https:
     address: ":443"
@@ -25,6 +37,11 @@ entryPoints:
       middlewares: default@file
       tls:
         options: secure@file
+        certResolver: cloudflare
+        domains:
+          - main: "example.com"
+            sans:
+              - "*.example.com"
 
 global:
   checkNewVersion: false

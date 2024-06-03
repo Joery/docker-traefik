@@ -42,9 +42,6 @@ http:
         burst: 50
 
 tls:
-  certificates:
-    - certFile: /certificates/example.com.cert
-      keyFile: /certificates/example.com.key
   options:
     secure:
       minVersion: VersionTLS13

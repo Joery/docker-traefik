@@ -7,6 +7,8 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
+      - CF_DNS_API_TOKEN=$CLOUDFLARE_API
+      - CF_ZONE_API_TOKEN=$CLOUDFLARE_API
     extra_hosts:
       - host.docker.internal:172.17.0.1
     image: traefik:beaufort # 3.0
@@ -21,7 +23,7 @@ services:
       - 443:443
     restart: unless-stopped
     volumes:
-      - $DOCKER/traefik/certificates:/certificates
+      - $DOCKER/traefik/acme.json:/acme.json
       - $DOCKER/traefik/configuration.yml:/configuration.yml
       - $DOCKER/traefik/traefik.log:/traefik.log
       - $DOCKER/traefik/traefik.yml:/traefik.yml
