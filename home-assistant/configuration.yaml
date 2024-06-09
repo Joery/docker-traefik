@@ -13,7 +13,9 @@ scene: !include scenes.yaml
 group:
   ignored_unavailable_entities:
     entities:
+      - conversation.home_assistant
       - stt.whisper
+      - tts.piper
 
 http:
   use_x_forwarded_for: true
