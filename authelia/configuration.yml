@@ -61,6 +61,11 @@ regulation:
   find_time: '5 minutes'
   ban_time: '1 hour'
 
+server:
+  buffers:
+    read: 8192
+    write: 8192
+
 session:
   secret: xxx
   cookies:
