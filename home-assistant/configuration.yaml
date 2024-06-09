@@ -37,6 +37,17 @@ http:
     - 197.234.240.0/22
     - 198.41.128.0/17
 
+mqtt:
+  sensor:
+  - name: "Water Consumption"
+    device_class: water
+    force_update: true
+    icon: mdi:water
+    state_class: total_increasing
+    state_topic: "water-meter/watermeter/reading/current_value"
+    unique_id: water-meter_current_value
+    unit_of_measurement: "L"
+
 recorder:
   db_url: postgresql://xxx:xxx@xxx/xxx
 
