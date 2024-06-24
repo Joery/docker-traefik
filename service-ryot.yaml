@@ -11,7 +11,7 @@ services:
       - TZ=$TZ
       - DATABASE_URL=$RYOT_DB
       - USERS_ALLOW_REGISTRATION=false
-    image: ghcr.io/ignisda/ryot:latest
+    image: ghcr.io/ignisda/ryot:v6
     labels:
       - traefik.enable=true
       - traefik.http.routers.ryot.rule=Host(`tracker.$WEB`)
