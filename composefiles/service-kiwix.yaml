@@ -1,0 +1,18 @@
+services:
+  kiwix-serve:
+    image: ghcr.io/kiwix/kiwix-serve
+    container_name: kiwix
+    command: '*.zim'
+    volumes:
+      - type: volume
+        source: Kiwix
+        target: /data
+        volume:
+          nocopy: true
+    restart: unless-stopped
+    networks:
+      - frontend
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.kiwix.rule=Host(`wiki.$WEB`)
+      - traefik.http.services.kiwix.loadbalancer.server.port=8080

@@ -1,0 +1,19 @@
+services:
+  bazarr:
+    image: hotio/bazarr
+    container_name: bazarr
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - UMASK_SET=777
+    volumes:
+      - $DOCKER/mediaserver/bazarr/config:/config
+    restart: unless-stopped
+    depends_on:
+      - gluetun
+    network_mode: container:gluetun
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.bazarr.rule=Host(`bazarr.$WEB`)
+      - traefik.http.services.bazarr.loadbalancer.server.port=6767

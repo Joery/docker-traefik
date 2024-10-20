@@ -1,0 +1,20 @@
+services:
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    stop_grace_period: 2m
+    environment:
+      - PUID=0
+      - PGID=$PGID
+      - TZ=$TZ
+      - UMASK_SET=777
+    volumes:
+      - $DOCKER/mediaserver/sonarr/config:/config
+    restart: unless-stopped
+    depends_on:
+      - gluetun
+    network_mode: container:gluetun
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.sonarr.rule=Host(`sonarr.$WEB`)
+      - traefik.http.services.sonarr.loadbalancer.server.port=8989

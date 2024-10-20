@@ -1,0 +1,20 @@
+services:
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    stop_grace_period: 2m
+    environment:
+      - PUID=0
+      - PGID=1001
+      - PGID=$PGID
+      - TZ=$TZ
+    volumes:
+      - $DOCKER/mediaserver/radarr/config:/config
+    restart: unless-stopped
+    depends_on:
+      - gluetun
+    network_mode: container:gluetun
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.radarr.rule=Host(`radarr.$WEB`)
+      - traefik.http.services.radarr.loadbalancer.server.port=7878

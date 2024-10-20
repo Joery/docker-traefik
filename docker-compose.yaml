@@ -1,0 +1,30 @@
+include:
+  - composefiles/networks.yaml
+  - composefiles/service-adguard.yaml
+  - composefiles/service-adguard-sync.yaml
+  - composefiles/service-asf.yaml
+  - composefiles/service-authelia.yaml            # Required
+  - composefiles/service-bitwarden.yaml
+  - scomposefiles/ervice-deluge.yaml
+  - composefiles/service-flame.yaml
+  - composefiles/service-freshrss.yaml
+  - composefiles/service-gluetun.yaml
+  - composefiles/service-home-assistant.yaml
+  - composefiles/service-mongo.yaml
+  - composefiles/service-mosquitto.yaml
+  - composefiles/service-netbootxyz.yaml
+  - composefiles/service-pairdrop.yaml
+  - composefiles/service-portainer.yaml
+  - composefiles/service-portainer-agent.yaml
+  - composefiles/service-postgres.yaml            # Required
+  - composefiles/service-ryot.yaml
+  - composefiles/service-socket-proxy.yaml        # Required
+  - composefiles/service-tautulli.yaml
+  - composefiles/service-traefik.yaml             # Required
+  - composefiles/service-unifi.yaml
+  - composefiles/service-uptime-kuma.yaml
+  - composefiles/service-watchtower.yaml
+  - composefiles/service-wyoming-openwakeword.yaml
+  - composefiles/service-wyoming-piper.yaml
+  - composefiles/service-wyoming-whisper.yaml
+  - composefiles/service-zipline.yaml

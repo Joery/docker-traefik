@@ -1,0 +1,21 @@
+services:
+  sabnzbd:
+    image: linuxserver/sabnzbd
+    container_name: sabnzbd
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - UMASK_SET=777
+      - WEBUI_PORT=8080
+    volumes:
+      - $DOCKER/mediaserver/sabnzbd/config:/config
+    restart: unless-stopped
+    depends_on:
+      - gluetun
+    network_mode: container:gluetun
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.sabnzbd.rule=Host(`sabnzbd.$WEB`)
+      - traefik.http.services.sabnzbd.loadbalancer.server.port=8080
+    
