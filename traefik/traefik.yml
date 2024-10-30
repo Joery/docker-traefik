@@ -7,11 +7,9 @@ certificatesResolvers:
       email: noreply@example.com
       storage: acme.json
       dnsChallenge:
+        disablePropagationCheck: true
         provider: cloudflare
         delayBeforeCheck: 60s
-        resolvers:
-          - "1.1.1.1:53"
-          - "1.0.0.1:53"
 
 entryPoints:
   https:
