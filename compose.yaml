@@ -19,6 +19,7 @@ include:
   - service-authelia.yaml            # Required
   - service-bitwarden.yaml
   - service-deluge.yaml
+  - service-esphome.yaml
   - service-flame.yaml
   - service-freshrss.yaml
   - service-gluetun.yaml

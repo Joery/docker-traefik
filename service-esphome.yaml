@@ -1,0 +1,14 @@
+services:
+  esphome:
+    container_name: esphome
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - USERNAME=$ESPHOME_USERNAME
+      - PASSWORD=$ESPHOME_PASSWORD
+    image: ghcr.io/esphome/esphome:latest
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/esphome:/config

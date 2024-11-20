@@ -14,6 +14,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `authelia` login portal for applications
 - `bitwarden` storing passwords & secrets
 - `deluge` downloading Linux ISOs
+- `esphome` manage microcontrollers
 - `flame` dashboard with bookmarks
 - `freshrss` RSS feeds aggregator
 - `gluetun` VPN for `deluge`
