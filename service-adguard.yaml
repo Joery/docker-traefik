@@ -9,11 +9,6 @@ services:
       - PGID=$PGID
       - TZ=$TZ
     image: adguard/adguardhome:latest
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.adguard.rule=Host(`dns.$WEB`)
-      - traefik.http.services.adguard.loadbalancer.server.port=80
-      - traefik.http.services.adguard.loadbalancer.server.url=http://$DOCKER_IP
     networks:
       - frontend
     ports:
