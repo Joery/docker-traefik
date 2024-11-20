@@ -9,14 +9,7 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
-    expose:
-      - 8123
     image: ghcr.io/linuxserver/homeassistant:latest
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.home-assistant.rule=Host(`home.$WEB`)
-      - traefik.http.services.home-assistant.loadbalancer.server.port=8123
-      - traefik.http.services.home-assistant.loadbalancer.server.url=http://$DOCKER_IP:8123
     network_mode: host
     restart: unless-stopped
     volumes:
