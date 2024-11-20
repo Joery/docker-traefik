@@ -10,7 +10,7 @@ services:
     networks:
       - frontend
     ports:
-      - 10200:10200
+      - 127.0.0.1:10200:10200
     restart: unless-stopped
     volumes:
       - $DATA/wyoming-piper:/config
