@@ -10,13 +10,7 @@ services:
       - PGID=$PGID
       - TZ=$TZ
     image: louislam/uptime-kuma:latest
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.uptime-kuma.rule=Host(`status.$WEB`)
-      - traefik.http.services.uptime-kuma.loadbalancer.server.port=3001
-    networks:
-      - backend
-      - frontend
+    network_mode: host
     restart: unless-stopped
     volumes:
       - $DOCKER/uptime-kuma:/app/data
