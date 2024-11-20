@@ -34,7 +34,6 @@ entryPoints:
     http:
       middlewares: default@file
       tls:
-        options: secure@file
         certResolver: cloudflare
         domains:
           - main: "example.com"

@@ -43,6 +43,6 @@ http:
 
 tls:
   options:
-    secure:
+    default:
       minVersion: VersionTLS13
       sniStrict: true
