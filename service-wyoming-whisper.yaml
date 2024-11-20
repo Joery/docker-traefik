@@ -12,7 +12,7 @@ services:
     networks:
       - frontend
     ports:
-      - 10300:10300
+      - 127.0.0.1:10300:10300
     restart: unless-stopped
     volumes:
       - $DATA/wyoming-whisper:/config
