@@ -40,6 +40,36 @@ http:
       rateLimit:
         average: 100
         burst: 50
+  routers:
+    adguard:
+      rule: "Host (`dns.example.com`)"
+      service: adguard
+    esphome:
+      rule: "Host (`esphome.example.com`)"
+      service: esphome
+    home-assistant:
+      rule: "Host (`home.example.com`)"
+      service: home-assistant
+    uptime-kuma:
+      rule: "Host (`status.example.com`)"
+      service: uptime-kuma
+  services:
+    adguard:
+      loadBalancer:
+        servers:
+          - url: http://x.x.x.x
+    esphome:
+      loadBalancer:
+        servers:
+          - url: http://x.x.x.x:6052
+    home-assistant:
+      loadBalancer:
+        servers:
+          - url: http://x.x.x.x:8123
+    uptime-kuma:
+      loadBalancer:
+        servers:
+          - url: http://x.x.x.x:3001
 
 tls:
   options:
