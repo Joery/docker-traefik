@@ -12,8 +12,8 @@ http:
         authResponseHeaders:
           - Remote-User
           - Remote-Groups
-          - Remote-Name
           - Remote-Email
+          - Remote-Name
         trustForwardHeader: true
     headers:
       headers:
@@ -27,7 +27,7 @@ http:
         customFrameOptionsValue: "SAMEORIGIN"
         customResponseHeaders:
           Server: ""
-          X-Robots-Tag: "none, noarchive, nosnippet, notranslate, noimageindex"
+          X-Robots-Tag: "none, nosnippet, notranslate, noimageindex"
         forceSTSHeader: true
         hostsProxyHeaders:
           - "X-Forwarded-Host"
