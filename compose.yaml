@@ -27,6 +27,7 @@ include:
   - service-mongo.yaml
   - service-mosquitto.yaml
   - service-netbootxyz.yaml
+  - service-nginx.yaml
   - service-pairdrop.yaml
   - service-portainer.yaml
   - service-portainer-agent.yaml
