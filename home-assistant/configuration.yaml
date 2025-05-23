@@ -11,7 +11,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 group:
-  ignored_unavailable_entities:
+  ignored_entities:
     entities:
       - conversation.home_assistant
       - stt.whisper
@@ -64,7 +64,7 @@ template:
         attributes:
           entity_id: >
             {% set ignore_seconds = 60 %}
-            {% set ignored = state_attr('group.ignored_unavailable_entities', 'entity_id') %}
+            {% set ignored = state_attr('group.ignored_entities', 'entity_id') %}
             {% set ignore_ts = (now().timestamp() - ignore_seconds)|as_datetime %}
             {% set entities = states
                 | rejectattr('domain','in',['button', 'event', 'group', 'image', 'input_button', 'input_text', 'remote', 'tts', 'scene', 'stt'])
