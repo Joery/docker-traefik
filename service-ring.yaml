@@ -1,0 +1,15 @@
+services:
+  ring:
+    container_name: ring
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: tsightler/ring-mqtt:latest
+    networks:
+      - frontend
+    ports:
+      - 127.0.0.1:8554:8554
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/ring:/data

@@ -32,6 +32,7 @@ include:
   - service-portainer.yaml
   - service-portainer-agent.yaml
   - service-postgres.yaml            # Required
+  - service-ring.yaml
   - service-ryot.yaml
   - service-socket-proxy.yaml        # Required
   - service-tautulli.yaml

@@ -26,6 +26,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `portainer` container management
 - `portainer-agent` container management agent
 - `postgres` database for `authelia`, `bitwarden`, `freshrss`, `home-assistant`, `ryot` & `zipline`
+- `ring` communication between Ring-devices & `home-assistant` via `mosquitto`
 - `ryot` media tracker
 - `socket-proxy` secure access to Docker socket
 - `tautulli` Plex activity & statistics
