@@ -1,7 +1,7 @@
 users:
-  xxx:
-    disabled: false
-    displayname: "xxx"
-    email: xxx@example.com
-    groups: []
-    password: "xxx"
+    xxx:
+        password: xxx
+        displayname: xxx
+        email: xxx@example.com
+        groups: []
+        disabled: false
