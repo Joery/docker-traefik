@@ -22,6 +22,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `mongo` database for `unifi`
 - `mosquitto` MQTT message broker
 - `netbootxyz` PXE boot ISOs
+- `nginx` simple webserver
 - `pairdrop` P2P file sharing
 - `portainer` container management
 - `portainer-agent` container management agent
