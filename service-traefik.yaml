@@ -9,7 +9,7 @@ services:
       - TZ=$TZ
       - CF_DNS_API_TOKEN=$CLOUDFLARE_API
       - CF_ZONE_API_TOKEN=$CLOUDFLARE_API
-    image: traefik:v3.5
+    image: traefik:ramequin # 3.6
     labels:
       - traefik.enable=true
       - traefik.http.routers.traefik.rule=Host(`traefik.$WEB`)
