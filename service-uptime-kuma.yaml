@@ -9,7 +9,7 @@ services:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
-    image: louislam/uptime-kuma:latest
+    image: louislam/uptime-kuma:2-slim
     network_mode: host
     restart: unless-stopped
     volumes:
