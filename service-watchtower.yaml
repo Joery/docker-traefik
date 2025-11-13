@@ -16,7 +16,7 @@ services:
 #     - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=$EMAIL_HOST
 #     - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=$EMAIL_PORT
       - WATCHTOWER_NOTIFICATION_URL=$SHOUTRRR_URL
-    image: ghcr.io/containrrr/watchtower:latest
+    image: ghcr.io/nicholas-fedor/watchtower:latest
     networks:
       - backend
     restart: unless-stopped
