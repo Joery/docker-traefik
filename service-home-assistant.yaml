@@ -3,8 +3,14 @@ services:
     container_name: home-assistant
     depends_on:
       - authelia
+      - esphome                 # Optional
       - postgres
+      - ring                    # Optional
       - traefik
+      - wyoming-openwakeword    # Optional
+      - wyoming-piper           # Optional
+      - wyoming-whisper         # Optional
+      - zwave                   # Optional
     devices:
       - /dev/serial/by-id/usb-Nabu_Casa_ZBT-2_XXX-if00:/dev/serial/by-id/usb-Nabu_Casa_ZBT-2_XXX-if00
     environment:
