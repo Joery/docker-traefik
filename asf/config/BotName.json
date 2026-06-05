@@ -1,0 +1,12 @@
+{
+  "AcceptGifts": true,
+  "BotBehaviour": 8,
+  "Enabled": true,
+  "FarmingOrders": [
+    3
+  ],
+  "OnlineStatus": 0,
+  "RemoteCommunication": 0,
+  "SteamLogin": "xxx",
+  "TradingPreferences": 1
+}
