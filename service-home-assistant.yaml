@@ -5,12 +5,15 @@ services:
       - authelia
       - postgres
       - traefik
+    devices:
+      - /dev/serial/by-id/usb-Nabu_Casa_ZBT-2_XXX-if00:/dev/serial/by-id/usb-Nabu_Casa_ZBT-2_XXX-if00
     environment:
       - PUID=$PUID
       - PGID=$PGID
       - TZ=$TZ
     image: ghcr.io/linuxserver/homeassistant:latest
     network_mode: host
+    privileged: true
     restart: unless-stopped
     volumes:
       - $DOCKER/home-assistant:/config
