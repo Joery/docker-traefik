@@ -44,3 +44,4 @@ include:
   - service-wyoming-piper.yaml
   - service-wyoming-whisper.yaml
   - service-zipline.yaml
+  - service-zwave.yaml

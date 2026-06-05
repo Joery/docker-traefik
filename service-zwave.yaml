@@ -1,0 +1,22 @@
+services:
+  zwave:
+    container_name: zwave
+    devices:
+      - /dev/serial/by-id/usb-Nabu_Casa_ZWA-2_XXX-if00:/dev/zwave
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+      - SESSION_SECRET=$ZWAVE_SECRET
+    image: zwavejs/zwave-js-ui:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.zwave.rule=Host(`zwave.$WEB`)
+      - traefik.http.services.zwave.loadbalancer.server.port=8091
+    networks:
+      - frontend
+    ports:
+      - 127.0.0.1:3000:3000
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/zwave:/usr/src/app/store
