@@ -1,0 +1,15 @@
+services:
+  matter:
+    container_name: matter
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: ghcr.io/matter-js/python-matter-server:stable
+    network_mode: host
+    security_opt:
+      - apparmor:unconfined
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/matter:/data
+      - /run/dbus:/run/dbus:ro

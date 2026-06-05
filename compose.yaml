@@ -24,9 +24,11 @@ include:
   - service-freshrss.yaml
   - service-gluetun.yaml
   - service-home-assistant.yaml
+  - service-matter.yaml
   - service-mongo.yaml
   - service-mosquitto.yaml
   - service-netbootxyz.yaml
+  - service-nextcloud.yaml
   - service-nginx.yaml
   - service-pairdrop.yaml
   - service-portainer.yaml           # Remove portainer-agent if running portainer
