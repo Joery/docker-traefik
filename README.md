@@ -19,9 +19,11 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `freshrss` RSS feeds aggregator
 - `gluetun` VPN for `deluge`
 - `home-assistant` home automation
+- `matter` Matter protocol support for `home-assistant`
 - `mongo` database for `unifi`
 - `mosquitto` MQTT message broker
 - `netbootxyz` PXE boot ISOs
+- `nextcloud` file sharing
 - `nginx` simple webserver
 - `pairdrop` P2P file sharing
 - `portainer` container management
@@ -39,6 +41,7 @@ If you find any issues or have improvements, feel free to create an [issue](http
 - `wyoming-piper` text-to-speech for `home-assistant`
 - `wyoming-whisper` speech-to-text for `home-assistant`
 - `zipline` file & link sharing
+- `zwave` Z-Wave support for `home-assistant`
 
 ## Networks
 - `frontend` for access to `traefik`
