@@ -1,0 +1,22 @@
+services:
+  nextcloud:
+    container_name: nextcloud
+    depends_on:
+      - authelia
+      - postgres
+      - traefik
+    environment:
+      - PUID=$PUID
+      - PGID=$PGID
+      - TZ=$TZ
+    image: ghcr.io/linuxserver/nextcloud:latest
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nextcloud.rule=Host(`drive.$WEB`)
+      - traefik.http.services.nextcloud.loadbalancer.server.port=443
+    networks:
+      - frontend
+    restart: unless-stopped
+    volumes:
+      - $DOCKER/nextcloud:/config
+      - $DATA/nextcloud:/data
