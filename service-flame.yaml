@@ -9,7 +9,7 @@ services:
       - PGID=$PGID
       - TZ=$TZ
       - PASSWORD=$FLAME_PASSWORD
-    image: pawelmalak/flame:latest
+    image: ghcr.io/fdarveau/flame:latest
     labels:
       - traefik.enable=true
       - traefik.http.routers.flame.rule=Host(`start.$WEB`)
